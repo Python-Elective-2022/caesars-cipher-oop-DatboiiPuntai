@@ -199,7 +199,7 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         '''
-        self.shift = shift
+        self.shift = shift % 26
 
 
 class CiphertextMessage(Message):
