@@ -157,8 +157,8 @@ class PlaintextMessage(Message):
         code is repeated
         '''
         message = Message(text)
-        self.message_text = message.message_text
-        self.valid_words = message.valid_words
+        self.message_text = message.get_message_text()
+        self.valid_words = message.get_valid_words()
         self.shift = shift
         self.encrypting_dict = self.build_shift_dict(self.shift)
         self.message_text_encrypted = self.apply_shift(self.shift)
