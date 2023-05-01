@@ -213,8 +213,9 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        self.message_text = text
-        self.valid_words = load_words(WORDLIST_FILENAME)
+        message = Message(text)
+        self.message_text = message.get_message_text()
+        self.valid_words = message.get_valid_words()
 
     def extract_alpha(self, s):
         '''
